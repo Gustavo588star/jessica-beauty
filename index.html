@@ -1,562 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jéssica Gonçalves Beauty | Cílios, Sobrancelhas e Limpeza de Pele</title>
-  <meta name="description" content="Jéssica Gonçalves Beauty em Pinhalzinho/SP. Especialista em cílios, sobrancelhas, limpeza de pele e buço, com 5 anos de experiência." />
-  <style>
-    :root {
-      --rosa: #c996b1;
-      --rosa-escuro: #a46f8b;
-      --rosa-claro: #f8eef4;
-      --texto: #2f2a2d;
-      --cinza: #6a5c64;
-      --branco: #ffffff;
-      --dourado: #d9b874;
-      --sombra: 0 15px 40px rgba(0,0,0,0.08);
-      --raio: 22px;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+  <!-- VERIFICAÇÃO GOOGLE -->
+  <meta name="google-site-verification" content="zkUTazLm95py-dk89XhqxA_qxhiEwecGpwjFNjFCIQc" />
+
+  <title>Jéssica Gonçalves Beauty | Cílios, Sobrancelhas e Limpeza de Pele</title>
+  <meta name="description" content="Jéssica Gonçalves Beauty em Pinhalzinho/SP. Especialista em cílios, sobrancelhas, limpeza de pele e buço, com 5 anos de experiência.">
+
+  <style>
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--texto);
-      background: linear-gradient(180deg, #fff 0%, #fdf7fa 100%);
-      line-height: 1.6;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
-
-    .container {
-      width: min(1120px, 92%);
-      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      background: #fff0f5;
+      color: #333;
+      text-align: center;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.82);
-      border-bottom: 1px solid rgba(164,111,139,0.12);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-    }
-
-    .brand img {
-      width: 52px;
-      height: 52px;
-      object-fit: cover;
-      border-radius: 16px;
-      box-shadow: var(--sombra);
-    }
-
-    .menu {
-      display: flex;
-      gap: 22px;
-      color: var(--cinza);
-      font-size: 0.96rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 24px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: .25s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--rosa), var(--rosa-escuro));
+      background: #c996b1;
       color: white;
-      box-shadow: 0 12px 30px rgba(164,111,139,0.25);
+      padding: 30px 20px;
     }
 
-    .btn-primary:hover { transform: translateY(-2px); }
-
-    .btn-secondary {
-      background: white;
-      color: var(--rosa-escuro);
-      border: 1px solid rgba(164,111,139,0.18);
-    }
-
-    .hero {
-      padding: 72px 0 40px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: var(--rosa-claro);
-      color: var(--rosa-escuro);
-      padding: 10px 16px;
-      border-radius: 999px;
-      font-size: .9rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 4.4rem);
-      line-height: 1.06;
-      margin: 0 0 18px;
-      font-family: Georgia, 'Times New Roman', serif;
-      letter-spacing: -.03em;
-    }
-
-    .hero p {
-      font-size: 1.08rem;
-      color: var(--cinza);
-      margin-bottom: 28px;
-      max-width: 620px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 28px;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 14px;
-      max-width: 620px;
-    }
-
-    .stat {
-      background: white;
-      border-radius: 20px;
-      padding: 18px;
-      box-shadow: var(--sombra);
-      border: 1px solid rgba(164,111,139,0.08);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.4rem;
-      color: var(--rosa-escuro);
-    }
-
-    .hero-card {
-      background: white;
-      border-radius: 30px;
-      padding: 18px;
-      box-shadow: var(--sombra);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      inset: auto -30px -50px auto;
-      width: 150px;
-      height: 150px;
-      background: radial-gradient(circle, rgba(201,150,177,.28), transparent 70%);
-      border-radius: 50%;
-    }
-
-    .hero-card img {
-      border-radius: 24px;
-      height: 540px;
-      object-fit: cover;
-      width: 100%;
+    header h1 {
+      margin: 0;
     }
 
     section {
-      padding: 40px 0;
+      padding: 30px 20px;
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .section-title span {
+    .btn {
       display: inline-block;
-      color: var(--rosa-escuro);
-      background: var(--rosa-claro);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: .85rem;
-      font-weight: 700;
-      margin-bottom: 12px;
+      margin-top: 15px;
+      padding: 12px 20px;
+      background: #a46f8b;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    .section-title h2 {
-      margin: 0;
-      font-size: clamp(1.7rem, 3vw, 2.8rem);
-      font-family: Georgia, 'Times New Roman', serif;
-    }
-
-    .section-title p {
-      color: var(--cinza);
-      max-width: 700px;
-      margin: 12px auto 0;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: white;
-      border-radius: var(--raio);
-      padding: 24px;
-      box-shadow: var(--sombra);
-      border: 1px solid rgba(164,111,139,0.08);
-    }
-
-    .card .icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--rosa-claro), #fff);
-      font-size: 1.5rem;
-      margin-bottom: 14px;
-    }
-
-    .card h3 { margin: 0 0 8px; }
-    .card p { margin: 0; color: var(--cinza); }
-
-    .about {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .about-box, .about-photo {
-      background: white;
-      border-radius: 28px;
-      box-shadow: var(--sombra);
-      overflow: hidden;
-      border: 1px solid rgba(164,111,139,0.08);
-    }
-
-    .about-photo img {
-      width: 100%;
-      height: 100%;
-      min-height: 430px;
-      object-fit: cover;
-    }
-
-    .about-box {
-      padding: 34px;
-    }
-
-    .about-box p {
-      color: var(--cinza);
-      margin-bottom: 18px;
-    }
-
-    .highlights {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .highlight {
-      background: var(--rosa-claro);
-      color: var(--texto);
-      border-radius: 18px;
-      padding: 14px 16px;
-      font-weight: 700;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 18px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 330px;
-      object-fit: cover;
-      border-radius: 24px;
-      box-shadow: var(--sombra);
-    }
-
-    .cta {
-      margin-top: 20px;
-      background: linear-gradient(135deg, #fff, var(--rosa-claro));
-      border: 1px solid rgba(164,111,139,0.1);
-      border-radius: 30px;
-      box-shadow: var(--sombra);
-      padding: 36px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .cta h3 {
-      margin: 0 0 12px;
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-family: Georgia, 'Times New Roman', serif;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 18px;
-      margin-top: 24px;
-    }
-
-    .contact-card {
-      background: white;
-      border-radius: 22px;
-      padding: 22px;
-      box-shadow: var(--sombra);
-      border: 1px solid rgba(164,111,139,0.08);
-    }
-
-    .contact-card small {
-      color: var(--rosa-escuro);
-      font-weight: 700;
-      display: block;
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: .08em;
+    .servicos div {
+      margin: 10px 0;
+      font-size: 18px;
     }
 
     footer {
-      padding: 34px 0 40px;
-      color: var(--cinza);
-      text-align: center;
-    }
-
-    @media (max-width: 980px) {
-      .hero-grid,
-      .about,
-      .cta,
-      .cards,
-      .gallery,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stats { grid-template-columns: 1fr; }
-      .menu { display: none; }
-      .hero-card img { height: 420px; }
+      background: #c996b1;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <img src="WhatsApp Image 2026-04-19 at 15.21.56.jpeg" alt="Logo Jéssica Gonçalves Beauty" />
-        <div>
-          <div>Jéssica Gonçalves Beauty</div>
-          <small style="color:#6a5c64; font-weight:600;">Beleza, cuidado e elegância</small>
-        </div>
-      </div>
-      <nav class="menu">
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#galeria">Galeria</a>
-        <a href="#contato">Contato</a>
-      </nav>
-      <a class="btn btn-primary" href="https://wa.me/5511955559460" target="_blank">Agendar agora</a>
-    </div>
-  </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Pinhalzinho/SP • 5 anos de experiência</div>
-          <h1>Realçando sua beleza com elegância, cuidado e delicadeza.</h1>
-          <p>
-            Na <strong>Jéssica Gonçalves Beauty</strong>, cada atendimento é pensado para valorizar sua beleza natural com técnicas modernas, atendimento acolhedor e resultados sofisticados em cílios, sobrancelhas e cuidados faciais.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/5511955559460" target="_blank">Falar no WhatsApp</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/jessicaagoncalves.beauty/" target="_blank">Ver Instagram</a>
-          </div>
-          <div class="stats">
-            <div class="stat">
-              <strong>+5 anos</strong>
-              experiência no segmento de beleza
-            </div>
-            <div class="stat">
-              <strong>4 serviços</strong>
-              atendimento especializado e personalizado
-            </div>
-            <div class="stat">
-              <strong>Pinhalzinho</strong>
-              atendimento com carinho e profissionalismo
-            </div>
-          </div>
-        </div>
+<header>
+  <h1>Jéssica Gonçalves Beauty</h1>
+  <p>Realçando sua beleza com elegância 💖</p>
+</header>
 
-        <div class="hero-card">
-          <img src="WhatsApp Image 2026-04-19 at 15.21.55.jpeg" alt="Trabalho de cílios Jéssica Gonçalves Beauty" />
-        </div>
-      </div>
-    </section>
+<section>
+  <h2>Sobre</h2>
+  <p>
+    Jéssica Gonçalves é uma profissional com mais de <strong>5 anos de experiência</strong>,
+    especializada em cílios, sobrancelhas e cuidados faciais.
+  </p>
+</section>
 
-    <section id="servicos">
-      <div class="container">
-        <div class="section-title">
-          <span>Serviços</span>
-          <h2>Atendimentos que valorizam sua autoestima</h2>
-          <p>Procedimentos realizados com atenção aos detalhes, técnicas atualizadas e foco em realçar sua beleza de forma natural e sofisticada.</p>
-        </div>
+<section class="servicos">
+  <h2>Serviços</h2>
+  <div>🌸 Extensão de cílios</div>
+  <div>🩷 Design de sobrancelhas</div>
+  <div>✨ Limpeza de pele</div>
+  <div>💆‍♀️ Buço</div>
+</section>
 
-        <div class="cards">
-          <div class="card">
-            <div class="icon">🌸</div>
-            <h3>Extensão de Cílios</h3>
-            <p>Alongamento e definição para um olhar marcante, elegante e harmonioso.</p>
-          </div>
-          <div class="card">
-            <div class="icon">🩷</div>
-            <h3>Design de Sobrancelhas</h3>
-            <p>Modelagem precisa para valorizar a expressão do rosto com naturalidade.</p>
-          </div>
-          <div class="card">
-            <div class="icon">✨</div>
-            <h3>Limpeza de Pele</h3>
-            <p>Cuidado facial voltado à renovação, bem-estar e sensação de pele limpa e saudável.</p>
-          </div>
-          <div class="card">
-            <div class="icon">💆🏻‍♀️</div>
-            <h3>Buço</h3>
-            <p>Acabamento delicado para deixar o rosto ainda mais leve, bonito e bem cuidado.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<section>
+  <h2>Contato</h2>
+  <p>📍 Rua Octaviano Fornari, 219 - Pinhalzinho/SP</p>
+  <a class="btn" href="https://wa.me/5511955559460" target="_blank">Agendar pelo WhatsApp</a>
+  <br><br>
+  <a class="btn" href="https://www.instagram.com/jessicaagoncalves.beauty/" target="_blank">Instagram</a>
+</section>
 
-    <section id="sobre">
-      <div class="container about">
-        <div class="about-photo">
-          <img src="WhatsApp Image 2026-04-19 at 15.23.34.jpeg" alt="Procedimento de limpeza de pele" />
-        </div>
-        <div class="about-box">
-          <div class="section-title" style="text-align:left; margin-bottom: 14px;">
-            <span>Sobre a profissional</span>
-            <h2>Excelência em cada detalhe do atendimento</h2>
-          </div>
-          <p>
-            À frente da <strong>Jéssica Gonçalves Beauty</strong>, Jéssica é uma profissional apaixonada pela arte de realçar a beleza feminina, com mais de <strong>5 anos de experiência</strong> no segmento de estética.
-          </p>
-          <p>
-            Reconhecida por sua <strong>delicadeza, precisão e bom gosto</strong>, atua com excelência em <strong>extensão de cílios, design de sobrancelhas, limpeza de pele e cuidados faciais</strong>, proporcionando resultados naturais, sofisticados e personalizados para cada cliente.
-          </p>
-          <p>
-            Seu atendimento vai além da estética: é uma experiência pensada para elevar a <strong>autoestima, confiança e bem-estar</strong>, em um ambiente acolhedor, profissional e preparado para oferecer o melhor em beleza e autocuidado.
-          </p>
-          <div class="highlights">
-            <div class="highlight">Atendimento personalizado</div>
-            <div class="highlight">Técnicas atualizadas</div>
-            <div class="highlight">Resultados elegantes</div>
-            <div class="highlight">Ambiente acolhedor</div>
-          </div>
-        </div>
-      </div>
-    </section>
+<footer>
+  © 2026 Jéssica Gonçalves Beauty
+</footer>
 
-    <section id="galeria">
-      <div class="container">
-        <div class="section-title">
-          <span>Galeria</span>
-          <h2>Resultados que falam por si</h2>
-          <p>Alguns registros que mostram a delicadeza e o cuidado presentes em cada procedimento realizado.</p>
-        </div>
-        <div class="gallery">
-          <img src="WhatsApp Image 2026-04-19 at 15.21.55 (1).jpeg" alt="Resultado de extensão de cílios" />
-          <img src="WhatsApp Image 2026-04-19 at 15.21.55 (2).jpeg" alt="Olhar com extensão de cílios" />
-          <img src="WhatsApp Image 2026-04-19 at 15.21.56.jpeg" alt="Logo Jéssica Gonçalves Beauty" />
-        </div>
-
-        <div class="cta">
-          <div>
-            <h3>Agende seu horário e viva uma experiência de beleza feita para você.</h3>
-            <p style="color: var(--cinza); margin:0;">
-              Entre em contato agora mesmo e reserve seu atendimento com quem entende de cuidado, elegância e autoestima.
-            </p>
-          </div>
-          <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-start;">
-            <a class="btn btn-primary" href="https://wa.me/5511955559460" target="_blank">Agendar pelo WhatsApp</a>
-            <a class="btn btn-secondary" href="https://www.instagram.com/jessicaagoncalves.beauty/" target="_blank">Instagram</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contato">
-      <div class="container">
-        <div class="section-title">
-          <span>Contato</span>
-          <h2>Informações para agendamento</h2>
-          <p>Fale com a Jéssica e agende seu atendimento com praticidade.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-card">
-            <small>Endereço</small>
-            <strong>Rua Octaviano Fornari, 219</strong><br>
-            Pinhalzinho/SP
-          </div>
-          <div class="contact-card">
-            <small>WhatsApp</small>
-            <strong><a href="https://wa.me/5511955559460" target="_blank">(11) 95555-9460</a></strong><br>
-            Atendimento para agendamentos
-          </div>
-          <div class="contact-card">
-            <small>Instagram</small>
-            <strong><a href="https://www.instagram.com/jessicaagoncalves.beauty/" target="_blank">@jessicaagoncalves.beauty</a></strong><br>
-            Acompanhe os trabalhos e novidades
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © 2026 Jéssica Gonçalves Beauty • Site desenvolvido com elegância e carinho.
-    </div>
-  </footer>
 </body>
 </html>
