@@ -1,44 +1,472 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="zkUTazLm95py-dk89XhqxA_qxhiEwecGpwjFNjFCIQc" />
+  <title>Jéssica Gonçalves Beauty | Cílios, Sobrancelhas e Limpeza de Pele</title>
+  <meta name="description" content="Jéssica Gonçalves Beauty em Pinhalzinho/SP. Especialista em cílios, sobrancelhas, limpeza de pele e buço, com 5 anos de experiência.">
+  <style>
+    :root{
+      --rosa:#c996b1;
+      --rosa-escuro:#a46f8b;
+      --rosa-claro:#fff0f5;
+      --texto:#333;
+      --branco:#fff;
+    }
 
-<meta name="google-site-verification" content="zkUTazLm95py-dk89XhqxA_qxhiEwecGpwjFNjFCIQc" />
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--rosa-claro);
+      color:var(--texto);
+      line-height:1.6;
+    }
 
-<title>Jéssica Gonçalves Beauty</title>
+    header{
+      background:#fff;
+      padding:18px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:16px;
+      box-shadow:0 2px 10px rgba(0,0,0,.06);
+      position:sticky;
+      top:0;
+      z-index:10;
+    }
 
-<style>
-body {margin:0;font-family:Arial;background:#fff0f5;color:#333;}
-header {background:#c996b1;color:#fff;padding:20px;text-align:center;}
-section {padding:30px;}
-h2 {color:#a46f8b;}
-.btn {display:inline-block;padding:10px 20px;background:#a46f8b;color:#fff;border-radius:20px;text-decoration:none;margin-top:10px;}
-footer {background:#c996b1;color:#fff;text-align:center;padding:10px;}
-</style>
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo img{
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      object-fit:cover;
+      box-shadow:0 4px 14px rgba(0,0,0,.15);
+    }
+
+    .logo strong{
+      display:block;
+      font-size:1.05rem;
+    }
+
+    .logo small{
+      color:#666;
+    }
+
+    nav{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:#333;
+      font-weight:700;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 20px;
+      border-radius:24px;
+      background:var(--rosa);
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    .hero{
+      max-width:1150px;
+      margin:0 auto;
+      padding:50px 20px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:30px;
+      align-items:center;
+    }
+
+    .tag{
+      display:inline-block;
+      background:#f6dce8;
+      color:var(--rosa-escuro);
+      padding:8px 14px;
+      border-radius:999px;
+      font-weight:700;
+      margin-bottom:16px;
+      font-size:.95rem;
+    }
+
+    h1{
+      font-size:clamp(2rem,4vw,3.7rem);
+      line-height:1.1;
+      margin:0 0 16px;
+    }
+
+    .hero p{
+      font-size:1.05rem;
+      color:#555;
+      margin-bottom:24px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:28px;
+    }
+
+    .btn-outline{
+      background:#fff;
+      color:var(--rosa-escuro);
+      border:1px solid #ddb5c8;
+    }
+
+    .hero-photo img{
+      width:100%;
+      max-height:520px;
+      object-fit:cover;
+      border-radius:24px;
+      box-shadow:0 10px 30px rgba(0,0,0,.12);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .stat{
+      background:#fff;
+      padding:18px;
+      border-radius:18px;
+      box-shadow:0 4px 16px rgba(0,0,0,.06);
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      color:var(--rosa-escuro);
+      font-size:1.4rem;
+    }
+
+    section{
+      max-width:1150px;
+      margin:0 auto;
+      padding:20px 20px 50px;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:28px;
+    }
+
+    .title h2{
+      font-size:2rem;
+      margin:0 0 8px;
+      color:var(--rosa-escuro);
+    }
+
+    .title p{
+      color:#666;
+      max-width:760px;
+      margin:0 auto;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:#fff;
+      padding:24px 18px;
+      border-radius:20px;
+      box-shadow:0 4px 16px rgba(0,0,0,.06);
+      text-align:center;
+    }
+
+    .card .icon{
+      font-size:2rem;
+      margin-bottom:10px;
+    }
+
+    .card h3{
+      margin:0 0 8px;
+      color:var(--rosa-escuro);
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:24px;
+      object-fit:cover;
+      max-height:480px;
+      box-shadow:0 10px 30px rgba(0,0,0,.12);
+    }
+
+    .about-box{
+      background:#fff;
+      padding:28px;
+      border-radius:24px;
+      box-shadow:0 4px 16px rgba(0,0,0,.06);
+    }
+
+    .about-box h2{
+      color:var(--rosa-escuro);
+      margin-top:0;
+    }
+
+    .highlights{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .highlight{
+      background:#f8dfe9;
+      padding:12px 14px;
+      border-radius:14px;
+      font-weight:700;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      border-radius:20px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .contact-card{
+      background:#fff;
+      padding:22px;
+      border-radius:20px;
+      box-shadow:0 4px 16px rgba(0,0,0,.06);
+    }
+
+    .contact-card small{
+      display:block;
+      color:var(--rosa-escuro);
+      font-weight:700;
+      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:.05em;
+    }
+
+    footer{
+      text-align:center;
+      background:var(--rosa);
+      color:#fff;
+      padding:18px;
+      margin-top:30px;
+    }
+
+    @media (max-width: 900px){
+      .hero,
+      .about,
+      .cards,
+      .gallery,
+      .contact-grid,
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      header{
+        justify-content:center;
+      }
+
+      nav{
+        justify-content:center;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-<h1>Jéssica Gonçalves Beauty</h1>
-<p>Beleza, cuidado e elegância</p>
-</header>
+  <header>
+    <div class="logo">
+      <img src="jessica.jpg" alt="Jéssica Gonçalves Beauty">
+      <div>
+        <strong>Jéssica Gonçalves Beauty</strong>
+        <small>Beleza, cuidado e elegância</small>
+      </div>
+    </div>
 
-<section>
-<h2>Serviços</h2>
-<p>Extensão de cílios • Sobrancelhas • Limpeza de pele • Buço</p>
-</section>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#contato">Contato</a>
+    </nav>
 
-<section>
-<h2>Contato</h2>
-<p>📍 Pinhalzinho/SP</p>
-<a class="btn" href="https://wa.me/5511955559460">WhatsApp</a>
-</section>
+    <a class="btn" href="https://wa.me/5511955559460" target="_blank">Agendar agora</a>
+  </header>
 
-<footer>
-© 2026 Jéssica Gonçalves Beauty
-</footer>
+  <section class="hero" id="inicio">
+    <div>
+      <div class="tag">Pinhalzinho/SP • 5 anos de experiência</div>
+      <h1>Realçando sua beleza com elegância, cuidado e delicadeza.</h1>
+      <p>
+        Na <strong>Jéssica Gonçalves Beauty</strong>, cada atendimento é pensado para valorizar sua beleza natural com técnicas modernas, atendimento acolhedor e resultados sofisticados em cílios, sobrancelhas e cuidados faciais.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn" href="https://wa.me/5511955559460" target="_blank">Falar no WhatsApp</a>
+        <a class="btn btn-outline" href="https://www.instagram.com/jessicaagoncalves.beauty/" target="_blank">Ver Instagram</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>+5 anos</strong>
+          experiência no segmento de beleza
+        </div>
+        <div class="stat">
+          <strong>4 serviços</strong>
+          atendimento especializado e personalizado
+        </div>
+        <div class="stat">
+          <strong>Pinhalzinho</strong>
+          atendimento com carinho e profissionalismo
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="jessica.jpg" alt="Jéssica Gonçalves Beauty">
+    </div>
+  </section>
+
+  <section id="servicos">
+    <div class="title">
+      <h2>Serviços</h2>
+      <p>Atendimentos que valorizam sua autoestima. Procedimentos realizados com atenção aos detalhes, técnicas atualizadas e foco em realçar sua beleza de forma natural e sofisticada.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🌸</div>
+        <h3>Extensão de Cílios</h3>
+        <p>Alongamento e definição para um olhar marcante, elegante e harmonioso.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🩷</div>
+        <h3>Design de Sobrancelhas</h3>
+        <p>Modelagem precisa para valorizar a expressão do rosto com naturalidade.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✨</div>
+        <h3>Limpeza de Pele</h3>
+        <p>Cuidado facial voltado à renovação, bem-estar e sensação de pele limpa e saudável.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💆🏻‍♀️</div>
+        <h3>Buço</h3>
+        <p>Acabamento delicado para deixar o rosto ainda mais leve, bonito e bem cuidado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="about">
+      <img src="jessica.jpg" alt="Sobre Jéssica Gonçalves Beauty">
+
+      <div class="about-box">
+        <h2>Sobre a profissional</h2>
+        <p>
+          À frente da <strong>Jéssica Gonçalves Beauty</strong>, Jéssica é uma profissional apaixonada pela arte de realçar a beleza feminina, com mais de <strong>5 anos de experiência</strong> no segmento de estética.
+        </p>
+        <p>
+          Reconhecida por sua <strong>delicadeza, precisão e bom gosto</strong>, atua com excelência em <strong>extensão de cílios, design de sobrancelhas, limpeza de pele e cuidados faciais</strong>, proporcionando resultados naturais, sofisticados e personalizados para cada cliente.
+        </p>
+        <p>
+          Seu atendimento vai além da estética: é uma experiência pensada para elevar a <strong>autoestima, confiança e bem-estar</strong>, em um ambiente acolhedor, profissional e preparado para oferecer o melhor em beleza e autocuidado.
+        </p>
+
+        <div class="highlights">
+          <div class="highlight">Atendimento personalizado</div>
+          <div class="highlight">Técnicas atualizadas</div>
+          <div class="highlight">Resultados elegantes</div>
+          <div class="highlight">Ambiente acolhedor</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeria">
+    <div class="title">
+      <h2>Galeria</h2>
+      <p>Resultados que falam por si. Alguns registros que mostram a delicadeza e o cuidado presentes em cada procedimento realizado.</p>
+    </div>
+
+    <div class="gallery">
+      <img src="jessica.jpg" alt="Resultado de extensão de cílios">
+      <img src="jessica.jpg" alt="Olhar com extensão de cílios">
+      <img src="jessica.jpg" alt="Jéssica Gonçalves Beauty">
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="title">
+      <h2>Contato</h2>
+      <p>Informações para agendamento. Fale com a Jéssica e agende seu atendimento com praticidade.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <small>Endereço</small>
+        <strong>Rua Octaviano Fornari, 219</strong><br>
+        Pinhalzinho/SP
+      </div>
+
+      <div class="contact-card">
+        <small>WhatsApp</small>
+        <strong><a href="https://wa.me/5511955559460" target="_blank">(11) 95555-9460</a></strong><br>
+        Atendimento para agendamentos
+      </div>
+
+      <div class="contact-card">
+        <small>Instagram</small>
+        <strong><a href="https://www.instagram.com/jessicaagoncalves.beauty/" target="_blank">@jessicaagoncalves.beauty</a></strong><br>
+        Acompanhe os trabalhos e novidades
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Jéssica Gonçalves Beauty • Site desenvolvido com elegância e carinho.
+  </footer>
 
 </body>
 </html>
